@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Exercicio1 {
+public class    Exercicio1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int escolhaUser;
@@ -160,5 +160,24 @@ public class Exercicio1 {
 
     static void exercicio3() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nomeUser = sc.nextLine();
+        char[] nomeVetor = new char[nomeUser.length()];
+
+        //Guardando nome no vetor
+        for (int i = 0; i < nomeVetor.length; i++){
+            char letra = nomeUser.charAt(i); //Icaro =
+            nomeVetor[i] = letra;
+        }
+
+        //Invertendo o nome no vetor
+        for (int i = 0; i < nomeVetor.length / 2; i++) {
+            char aux = nomeVetor[i];
+            nomeVetor[i] = nomeVetor[nomeVetor.length - 1 - i];
+            nomeVetor[nomeVetor.length - 1 - i] = aux;
+        }
+        String nomeFinal = new String(nomeVetor);
+        System.out.println(Arrays.toString(nomeVetor));
+        System.out.println(nomeFinal);
     }
 }
